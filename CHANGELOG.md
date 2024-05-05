@@ -1,5 +1,11 @@
 # @henrotaym/laravel-temporary-files
 
+## 0.0.2
+
+### Patch Changes
+
+- bc0ed3e: Removing version from composer.json
+
 ## 0.0.1
 
 ### Patch Changes
