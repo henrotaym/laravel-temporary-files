@@ -1,0 +1,24 @@
+services:
+  cli:
+    user: ${UID}:${GID}
+    image: henrotaym/laravel-temporary-files-cli:local
+    build:
+      context: .
+      args:
+        - UID=${UID}
+        - GID=${GID}
+      dockerfile: Dockerfile
+      target: cli
+    environment:
+      - XDEBUG_MODE=coverage
+    volumes:
+      - ./:/opt/apps/app
+  bun:
+    user: ${UID}:${GID}
+    image: henrotaym/laravel-temporary-files-bun:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: bun
+    volumes:
+      - ./:/opt/apps/app
