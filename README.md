@@ -1,16 +1,14 @@
 # laravel-temporary-files
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-temporary-files/laravel-temporary-files.svg?style=flat-square)](https://packagist.org/packages/laravel-temporary-files/laravel-temporary-files)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/laravel-temporary-files/laravel-temporary-files/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/laravel-temporary-files/laravel-temporary-files/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/laravel-temporary-files/laravel-temporary-files/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/laravel-temporary-files/laravel-temporary-files/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel-temporary-files/laravel-temporary-files.svg?style=flat-square)](https://packagist.org/packages/laravel-temporary-files/laravel-temporary-files)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/henrotaym/laravel-temporary-files.svg?style=flat-square)](https://packagist.org/packages/henrotaym/laravel-temporary-files)
+[![Total Downloads](https://img.shields.io/packagist/dt/henrotaym/laravel-temporary-files.svg?style=flat-square)](https://packagist.org/packages/henrotaym/laravel-temporary-files)
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require laravel-temporary-files/laravel-temporary-files
+composer require henrotaym/laravel-temporary-files
 ```
 
 You can install package with:
@@ -48,7 +46,29 @@ php artisan vendor:publish --tag="laravel-temporary-files-views"
 ## Usage
 
 ```php
-@TODO
+    use Henrotaym\LaravelTemporaryFiles\Facades\LaravelTemporaryFiles;
+    use Henrotaym\LaravelTemporaryFiles\Factories\Services\TemporaryFiles\TemporaryFileServiceFactory;
+    use Henrotaym\LaravelTemporaryFiles\Services\TemporaryFiles\TemporaryFileService;
+
+    // SERVICE CREATION
+
+    // USING FACTORY
+    $service = app(TemporaryFileServiceFactory::class)->create();
+    // USING FACADE
+    $service = LaravelTemporaryFiles::factory()->create();
+
+    // STORE SERVICE
+    $content = 'test';
+    $contentPath = $service->store()->content($content, 'txt');
+    $base64ContentPath = $service->store()->base64(base64_encode($content), 'txt');
+    $urlContentPath = $service->store()->url('https://avatars.githubusercontent.com/u/24230736?v=4');
+
+    // PATH SERVICE
+    $filePath = $service->path()->name('test.php');
+    $filePath = $service->path()->extension('php');
+
+    // DELETE SERVICE
+    $service->delete()->directory();
 ```
 
 ## Testing
