@@ -9,8 +9,8 @@
     "homepage": "https://github.com/henrotaym/laravel-temporary-files",
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "illuminate/contracts": "^10.0||^11.0",
+        "php": "^8.0",
+        "illuminate/contracts": "^9.0|^10.0||^11.0",
         "spatie/laravel-package-tools": "^1.16",
         "spatie/temporary-directory": "^2.2"
     },
