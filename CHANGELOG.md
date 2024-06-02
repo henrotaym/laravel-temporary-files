@@ -1,5 +1,11 @@
 # @henrotaym/laravel-temporary-files
 
+## 0.1.0
+
+### Minor Changes
+
+- e5991c4: Adding get temporary file service.
+
 ## 0.0.3
 
 ### Patch Changes
