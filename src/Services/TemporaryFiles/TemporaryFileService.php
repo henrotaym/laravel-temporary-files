@@ -7,7 +7,8 @@ class TemporaryFileService
     public function __construct(
         protected StoreTemporaryFileService $storeTemporaryFileService,
         protected PathTemporaryFileService $pathTemporaryFileService,
-        protected DeleteTemporaryFileService $deleteTemporaryFileService
+        protected DeleteTemporaryFileService $deleteTemporaryFileService,
+        protected GetTemporaryFileService $getTemporaryFileService,
     ) {
     }
 
@@ -24,5 +25,10 @@ class TemporaryFileService
     public function delete(): DeleteTemporaryFileService
     {
         return $this->deleteTemporaryFileService;
+    }
+
+    public function get(): GetTemporaryFileService
+    {
+        return $this->getTemporaryFileService;
     }
 }

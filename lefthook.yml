@@ -7,3 +7,6 @@ pre-commit:
     analyze:
       glob: '*.{php}'
       run: ./cli analyze {staged_files}
+    test:
+      glob: '*.{php}'
+      run: ./cli test

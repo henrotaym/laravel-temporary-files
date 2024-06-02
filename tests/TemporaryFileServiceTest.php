@@ -49,3 +49,31 @@ it('can delete directory', function () {
 
     expect(file_exists($contentPath))->toBeFalse();
 });
+
+it('can get binary file', function () {
+    /**
+     * @var TemporaryFileService
+     */
+    $service = app(TemporaryFileServiceFactory::class)->create();
+
+    $content = 'test';
+    $contentPath = $service->store()->content($content, 'txt');
+
+    $retrievedContent = $service->get()->content($contentPath);
+
+    expect($retrievedContent)->toBe($content);
+});
+
+it('can get resource file', function () {
+    /**
+     * @var TemporaryFileService
+     */
+    $service = app(TemporaryFileServiceFactory::class)->create();
+
+    $content = 'test';
+    $contentPath = $service->store()->content($content, 'txt');
+
+    $resource = $service->get()->resource($contentPath);
+
+    expect(is_resource($resource))->toBeTrue();
+});
