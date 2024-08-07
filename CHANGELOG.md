@@ -1,5 +1,11 @@
 # @henrotaym/laravel-temporary-files
 
+## 0.1.3
+
+### Patch Changes
+
+- b084db4: Removing install script for laravel 8 support. Spatie package tools v1.12 missing hasInstallCommand method.
+
 ## 0.1.2
 
 ### Patch Changes
