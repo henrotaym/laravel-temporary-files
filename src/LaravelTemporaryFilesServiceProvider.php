@@ -2,7 +2,6 @@
 
 namespace Henrotaym\LaravelTemporaryFiles;
 
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -15,10 +14,6 @@ class LaravelTemporaryFilesServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-temporary-files')
-            ->hasConfigFile('laravel-temporary-files')
-            ->hasInstallCommand(function (InstallCommand $command) {
-                $command
-                    ->publishConfigFile();
-            });
+            ->hasConfigFile('laravel-temporary-files');
     }
 }
