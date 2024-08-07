@@ -1,5 +1,11 @@
 # @henrotaym/laravel-temporary-files
 
+## 0.1.1
+
+### Patch Changes
+
+- 392da68: Laravel 8 support?
+
 ## 0.1.0
 
 ### Minor Changes
