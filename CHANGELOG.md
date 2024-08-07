@@ -1,5 +1,11 @@
 # @henrotaym/laravel-temporary-files
 
+## 0.1.2
+
+### Patch Changes
+
+- f1822f0: Older spatie package tools.
+
 ## 0.1.1
 
 ### Patch Changes
