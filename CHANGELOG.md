@@ -1,5 +1,11 @@
 # @henrotaym/laravel-temporary-files
 
+## 1.0.1
+
+### Patch Changes
+
+- 9799376: Add changeset release infrastructure + bun
+
 ## 0.1.3
 
 ### Patch Changes
